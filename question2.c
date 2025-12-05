@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-//Since we were only asked to keep records rather than have a transaction I onlu made the function of the program to keep records.
+//Since we were only asked to keep records rather than have a transaction I only made the function of the program to keep records.
 
 struct account_history
 {
@@ -65,7 +65,7 @@ int main()
     }
 
     printf("when was the account created? DD/MM/YYYY format \n");
-    scanf("%s", account.creation_date);
+    scanf(" %[^\n]", account.creation_date);
 
     printf("State the balance in the account \n");
     scanf("%f", &account.balance);
@@ -81,10 +81,10 @@ int main()
     {
         account.history[i].amount = 0;
         printf("state the date of transaction (DD/MM/YYYY) \n");
-        scanf(" %s", account.history[i].date);
+        scanf(" %[^\n]", account.history[i].date);
 
         printf("state the type of transaction (Deposit/Withdrawal) \n");
-        scanf(" %s", account.history[i].type);
+        scanf(" %[^\n]", account.history[i].type);
 
         printf("state the amount of transaction \n");
         scanf(" %f", &account.history[i].amount);
